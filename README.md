@@ -1,2 +1,3 @@
-# aoc2020
-Advent of Code (2020) entries
+# Advent of Code 2020
+
+Contains my solutions to the AOC 2020 puzzles.
