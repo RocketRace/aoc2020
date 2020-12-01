@@ -11,7 +11,7 @@ def check(day):
         exec(fp.read(), new_globals)
         solution = new_globals['solve'](data)
         if solution == solutions[str(day)]:
-            print(f"Day {day}: Passed [{solution}]")
+            print(f"Day {day}: Passed - {solution}")
         else:
             print(f"Day {day} failed: Expected {solutions[str(day)]}, got {solution}")
 
