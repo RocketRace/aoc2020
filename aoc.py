@@ -1,4 +1,5 @@
 import json
+from time import time
 
 with open("solutions.json") as fp:
     solutions = json.load(fp)
@@ -9,13 +10,30 @@ def check(day):
     with open(f"days/day{day}.py") as fp:
         new_globals = globals().copy()
         exec(fp.read(), new_globals)
-        solution = new_globals['solve'](data)
-        if solution == solutions[str(day)]:
-            print(f"Day {day}: Passed - {solution}")
+        impls = new_globals["implementations"]
+        if len(impls) == 1:
+            print(f"Day {day}: 1 implementation found.")
         else:
-            print(f"Day {day} failed: Expected {solutions[str(day)]}, got {solution}")
+            print(f"Day {day}: {len(impls)} implementations found.")
+        for i, impl in enumerate(impls):
+            t = time()
+            solution = impl(data)
+            dt = time() - t
+            success = solution == solutions[str(day)]
+            count = int(0.1 / dt)
+            total = 0
+            for _ in range(count):
+                t = time()
+                solution = impl(data)
+                dt = time() - t
+                total += dt
+            mean = total / count
+            if success:
+                print(f"{i + 1}. Passed in {mean:.3} s: {solution}")
+            else:
+                print(f"{i + 1}. Failed in {mean:.3} s: Expected {solutions[str(day)]}, got {solution}")
 
-day = input("Day to solve: ").strip()
+day = input("Day to solve (omit to solve all): ").strip()
 
 if not day:
     for i in range(25):
