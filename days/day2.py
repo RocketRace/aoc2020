@@ -1,4 +1,9 @@
-def solve_naive(data): # O(Scans through whole string twice), O(Scans through whole string almost twice)
+def solve_naive(data):
+    '''
+    1. O(Scans through whole string twice, with C bindings)
+
+    2. O(Scans through whole string once, with C bindings)
+    '''
     first = 0
     for entry in data:
         rule, x, password = entry.split(" ")
@@ -14,8 +19,5 @@ def solve_naive(data): # O(Scans through whole string twice), O(Scans through wh
         if (password[n - 1] == char) ^ (password[m - 1] == char):
             second += 1
     return [first, second]
-
-def solve_faster(data):
-    first = 0
 
 implementations = (solve_naive,)

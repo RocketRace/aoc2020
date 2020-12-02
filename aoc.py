@@ -36,7 +36,10 @@ def check(day):
 day = input("Day to solve (omit to solve all): ").strip()
 
 if not day:
-    for i in range(25):
-        check(i + 1)
+    try:
+        for i in range(25):
+            check(i + 1)
+    except:
+        print("No more days found.")
 else:
     check(day)
