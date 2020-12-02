@@ -6,7 +6,7 @@ with open("solutions.json") as fp:
 
 def check(day):
     with open(f"days/day{day}.txt") as fp:
-        data = [int(x.strip()) for x in fp.readlines()]
+        data = [x.strip() for x in fp.readlines()]
     with open(f"days/day{day}.py") as fp:
         new_globals = globals().copy()
         exec(fp.read(), new_globals)
