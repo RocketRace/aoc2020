@@ -19,7 +19,7 @@ def check(day):
             t = time()
             solution = impl(data)
             dt = time() - t
-            success = solution == solutions[str(day)]
+            success = solution == solutions.get(str(day))
             count = int(0.1 / dt)
             total = 0
             for _ in range(count):
@@ -31,7 +31,7 @@ def check(day):
             if success:
                 print(f"{i + 1}. Passed in {mean:.3} s: {solution}")
             else:
-                print(f"{i + 1}. Failed in {mean:.3} s: Expected {solutions[str(day)]}, got {solution}")
+                print(f"{i + 1}. Failed in {mean:.3} s: Expected {solutions.get(str(day))}, got {solution}")
 
 day = input("Day to solve (omit to solve all): ").strip()
 
