@@ -28,7 +28,6 @@ def solve_naive(data):
             m += 1
             if row[m % width] == "#":
                 acc[4] += 1
-    print(acc)
     second = acc[0] * acc[1] * acc[2] * acc[3] * acc[4]
     return [first, second]
 
