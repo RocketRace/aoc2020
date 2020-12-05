@@ -1,4 +1,5 @@
-def solve_naive(data):
+from typing import List
+def solve_naive(data: List[str]):
     first = 0
     
     comp = {"ecl","pid","eyr","hcl","byr","iyr","hgt"}
@@ -48,5 +49,14 @@ def solve_naive(data):
 
     return [first, second]
 
+def solve_less_naive(data: List[str]):
+    first = 0
+    for line in data:
+        if line == "":
+            first += 1
+        for part in line.split(" "):
+            ...
+    second = 0
+    return [first, second]
 
 implementations = (solve_naive,)

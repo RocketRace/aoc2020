@@ -1,4 +1,5 @@
-def solve_naive(data):
+from typing import List
+def solve_naive(data: List[str]):
     '''
     1. O(Scans through whole string twice, with C bindings)
 

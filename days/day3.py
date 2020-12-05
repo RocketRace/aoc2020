@@ -1,6 +1,6 @@
 import itertools
-
-def solve_naive(data):
+from typing import List
+def solve_naive(data: List[str]):
     first = 0
     width = len(data[0])
     i = 0

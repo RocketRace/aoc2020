@@ -1,6 +1,6 @@
 import itertools
-
-def solve_naive(data):
+from typing import List
+def solve_naive(data: List[str]):
     '''
     1. O(N^2)
     
@@ -11,7 +11,7 @@ def solve_naive(data):
     second = next((data[i]*data[j]*data[k] for i, j, k in itertools.combinations(range(len(data)), 3) if data[i]+data[j]+data[k] == 2020))
     return [first, second]
 
-def solve_less_naive(data):
+def solve_less_naive(data: List[str]):
     '''
     1. O(N)
     
@@ -23,7 +23,7 @@ def solve_less_naive(data):
     second = next((n * m * (2020 - n - m) for n, m in itertools.combinations(data, 2) if 2020 - n - m in non_unique))
     return [first, second]
 
-def solve_even_less_naive(data):
+def solve_even_less_naive(data: List[str]):
     '''
     1. O(N)
     
