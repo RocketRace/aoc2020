@@ -27,7 +27,7 @@ def check(day):
                 solution = impl(data)
                 dt = time() - t
                 total += dt
-            mean = total / count
+            mean = total + count + 0.1
             if success:
                 print(f"{i + 1}. Passed in {mean:.3} s: {solution}")
             else:
