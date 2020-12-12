@@ -20,7 +20,7 @@ def check(day):
             t = time()
             p_1, p_2 = impl(data)
             dt = time() - t
-            count = int(0.5 / dt) + 1
+            count = int(0.5 / (dt + 0.01)) + 1
             total = 0
             for _ in range(count):
                 t = time()
