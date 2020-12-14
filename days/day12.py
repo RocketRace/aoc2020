@@ -57,7 +57,7 @@ def solve_naive(data: List[str]):
     return [first, second]
 
 def s(I):
- f=lambda c:abs(c.real)+abs(c.imag);p=P=0j;d=p+1;w=10-1j;g=[1j,-1j,1]
+ f=lambda c:abs(c.real)+abs(c.imag);p=P=0;d=1;w=10-1j;g=[1j,-1j,1]
  for i,*r in I:a=int(''.join(r));x=(g+[-1,0])["SNEW".find(i)]*a;y=g["RL".find(i)]**(a//90);z=a*(i=="F");p+=x+z*d;P+=z*w;w=w*y+x;d*=y
  return f(p),f(P)
 
