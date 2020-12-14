@@ -56,4 +56,9 @@ def solve_naive(data: List[str]):
     second = abs(x) + abs(y)
     return [first, second]
 
-implementations = (solve_naive,)
+def s(I):
+ p=P=0j;d=p+1;w=10-1j
+ for i,a in[(i[0],int(i[1:]))for i in I]:k=a//90;x=a*[1,-1,1j,-1j,0]["EWSN".find(i)];y=[1j,-1j,1]["RL".find(i)]**k;z=i=="F"and a;p+=x+z*d;P+=z*w;w=w*y+x;d*=y
+ return abs(p.real)+abs(p.imag),abs(P.real)+abs(P.imag)
+
+implementations = (solve_naive,s)
