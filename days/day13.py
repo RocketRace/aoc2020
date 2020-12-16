@@ -1,5 +1,4 @@
 from typing import List
-import sympy
 def solve_naive(data: List[str]):
     first = 0
     earliest, raw_buses = data

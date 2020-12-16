@@ -1,5 +1,4 @@
 from typing import List
-import itertools
 def solve_naive(data: List[str]):
     ones = zeros = 0
     mem = {}

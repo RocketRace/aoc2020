@@ -1,4 +1,3 @@
-import math
 from typing import List
 
 def solve_naive(data: List[str]):
