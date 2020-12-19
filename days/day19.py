@@ -45,8 +45,6 @@ def solve_naive(data: List[str]):
     for line in data:
         if line == "":
             pattern = regex.compile(f"^{substitute('0')}$")
-            print(f"^{substitute_pt2('0')}$")
-            first_instance = {"8": True, "11": True}
             pattern_p2 = regex.compile(f"^{substitute_pt2('0')}$")
             tests = True
             continue
